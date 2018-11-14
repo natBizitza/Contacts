@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Contacts.Migrations
 {
-    [DbContext(typeof(ContactsContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     [Migration("20181114110855_table_Contacts")]
     partial class table_Contacts
     {

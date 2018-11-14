@@ -11,9 +11,9 @@ namespace Contacts.Controllers
 {
     public class ContactsController : Controller
     {
-        private readonly ContactsContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public ContactsController(ContactsContext context)
+        public ContactsController(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -22,6 +22,29 @@ namespace Contacts.Controllers
         public async Task<IActionResult> Index()
         {
             return View(await _context.Contacts.ToListAsync());
+        }
+
+        // GET: Contacts friends
+        public IActionResult Friends()
+        {
+            return View(_context.Contacts.ToList().Where(x => x.Type == "friend"));
+        }
+
+        // GET: Contacts colleagues
+        public IActionResult Colleagues()
+        {
+            return View(_context.Contacts.ToList().Where(x => x.Type == "colleague"));
+        }
+
+        // GET: Contacts family
+        public IActionResult Family()
+        {
+            return View(_context.Contacts.ToList().Where(x => x.Type == "family"));
+
+        }  // GET: Contacts other
+        public IActionResult Others()
+        {
+            return View(_context.Contacts.ToList().Where(x => x.Type == "other"));
         }
 
         // GET: Contacts/Details/5

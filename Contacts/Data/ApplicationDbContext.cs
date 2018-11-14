@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Contacts.Models;
 
-    public class ContactsContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
-        public ContactsContext (DbContextOptions<ContactsContext> options)
+        public ApplicationDbContext (DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }

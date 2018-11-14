@@ -32,7 +32,17 @@
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Contacts" asp-action="Index">Contacts</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Contacts<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a asp-area="" asp-controller="Contacts" asp-action="Index">My Contacts</a></li>
+                            <li>  <a asp-area="" asp-controller="Contacts" asp-action="Friends">Friends</a></li>
+                            <li>  <a asp-area="" asp-controller="Contacts" asp-action="Family">Family</a></li>
+                            <li>  <a asp-area="" asp-controller="Contacts" asp-action="Colleagues">Colleagues</a></li>
+                            <li>  <a asp-area="" asp-controller="Contacts" asp-action="Others">Others</a></li>
+
+                        </ul>
+                    </li>
                 </ul>
                 <partial name="_LoginPartial" />
             </div>
