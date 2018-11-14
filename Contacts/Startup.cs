@@ -41,6 +41,9 @@ namespace Contacts
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<ContactsContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("ContactsContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
