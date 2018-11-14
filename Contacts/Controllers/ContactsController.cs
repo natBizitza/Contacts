@@ -53,7 +53,7 @@ namespace Contacts.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,PhoneNumber,Image")] Contact contact)
+        public async Task<IActionResult> Create([Bind("Id,Name,PhoneNumber,Type,Image")] Contact contact)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace Contacts.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,PhoneNumber,Image")] Contact contact)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,PhoneNumber,Type,Image")] Contact contact)
         {
             if (id != contact.Id)
             {

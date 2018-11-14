@@ -19,6 +19,9 @@
                 @Html.DisplayNameFor(model => model.PhoneNumber)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Image)
             </th>
             <th></th>
@@ -30,11 +33,14 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
             <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber)
-            </td>
-            <td>
-                <img  src="~/images/@Html.DisplayFor(modelItem => item.Image)" width="40px">
+                <img src="~/images/@Html.DisplayFor(modelItem => item.Image)" width="40px">
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
